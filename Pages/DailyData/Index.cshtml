@@ -1,0 +1,82 @@
+﻿@page
+@model Covid19_Data.Pages.DailyData.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Latest Covid Data</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].CountryCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].Slug)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].NewConfirmed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].TotalConfirmed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].NewDeaths)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].TotalDeaths)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].NewRecovered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].TotalRecovered)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CountryData[0].Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CountryData) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CountryCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Slug)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalConfirmed)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewDeaths)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalDeaths)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NewRecovered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalRecovered)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
